@@ -1,10 +1,11 @@
-package restful.demo.Model;
+package restful.demo.model;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 import java.time.LocalDate;
 
@@ -18,4 +19,5 @@ public class NoticeModel {
     private String title;
     private String content;
     private LocalDate localDate;
+
 }

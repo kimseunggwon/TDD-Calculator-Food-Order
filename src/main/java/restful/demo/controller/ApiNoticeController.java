@@ -1,9 +1,11 @@
 package restful.demo.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import restful.demo.Model.NoticeModel;
+import restful.demo.model.BookInfoVO;
+import restful.demo.model.Item;
+import restful.demo.model.NoticeModel;
 import restful.demo.service.TestService;
 
 import java.time.LocalDate;
@@ -12,9 +14,10 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class ApiNoticeController {
 
-    private TestService testService;
+    private final TestService testService;
 
 
 
@@ -85,17 +88,51 @@ public class ApiNoticeController {
         return noticeModel;
     }*/
 
-    @PostMapping("/api/notice")
+    @PostMapping("/api/notice1")
     public NoticeModel addNotice(@RequestBody NoticeModel noticeModel) {
         noticeModel.setId(3);
         noticeModel.setLocalDate(LocalDate.now());
         return noticeModel;
     }
 
-    @GetMapping("/user")
-    public List<NoticeModel> getUserList() throws Exception{
-        return testService.getUserList();
+   /* @GetMapping("/user")
+    public List<NoticeModel> getUserList(Object req) throws Exception{
+        log.info("컨트롤러 진입");
+
+        return testService.getUserList(req);
+    }*/
+
+    @GetMapping("/userAll")
+    public List<Item> getItem(Item item) {
+        log.info("컨트롤러 진입");
+
+        return testService.getItem();
     }
 
+    @GetMapping("/book")
+    public List<BookInfoVO> getBook(BookInfoVO bookInfoVO) {
+        log.info("북 컨트롤러 진입");
+        return testService.getBook();
+    }
+
+    @GetMapping("/notice")
+    public List<NoticeModel> getNotice(NoticeModel noticeModel) {
+        log.info("모델 컨트롤러 진입");
+        return testService.getNotice();
+    }
+
+    @GetMapping("/notice/{id}")
+    public NoticeModel selectById(@PathVariable int id) {
+        log.info("모델1 컨트롤러 진입");
+        return testService.selectById(id);
+    }
+
+    // 테스트해봐야함
+    @PostMapping("/notice/new1")
+    public List<NoticeModel> insert(@RequestBody NoticeModel noticeModel) {
+        testService.insert(noticeModel);
+
+        return testService.getNotice();
+    }
 
 }

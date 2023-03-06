@@ -4,9 +4,36 @@
 
 <mapper namespace="restful.demo.mapper.TestMapper">
 
-    <select id="getUserList" resultType="restful.demo.Model.NoticeModel">
+    <select id="getUserList" resultType="NoticeModel">
         select id,title,content,local_date
         from NoticeModel
+        WHERE id = #{id}
     </select>
+
+
+    <select id="getItem" resultType="Item">
+        select * from item
+    </select>
+
+    <select id="getBook" resultType="BookInfoVO">
+        select * from BOOK_INFO_TBL
+    </select>
+
+    <select id="getNotice" resultType="NoticeModel">
+        select * from NOTICEMODEL
+    </select>
+
+    <select id="selectById" resultType="NoticeModel">
+        select * from NOTICEMODEL
+        where  id =#{id}
+    </select>
+
+    <insert id="insert" parameterType="NoticeModel">
+        insert into NoticeModel(id,title,content,local_date)
+        values (#{id},#{title},#{content},#{local_date})
+
+    </insert>
+
+
 
 </mapper>
