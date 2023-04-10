@@ -1,6 +1,8 @@
 package restful.demo.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import restful.demo.model.BoardDto;
 import restful.demo.model.BookInfoVO;
 import restful.demo.model.Item;
 import restful.demo.model.NoticeModel;
@@ -22,8 +24,12 @@ public interface TestMapper {
 
     void insert(NoticeModel noticeModel);
 
-    //void update(NoticeModel noticeModel);
+    void update(NoticeModel noticeModel);
 
-    //void delete(String id);
+    void delete(int id);
+
+    List<BoardDto> selectBoardList() throws Exception;
+
+    void insertBoard(BoardDto boardDto) throws Exception;
 
 }

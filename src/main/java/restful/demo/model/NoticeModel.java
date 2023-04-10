@@ -18,6 +18,6 @@ public class NoticeModel {
     private int id;
     private String title;
     private String content;
-    private LocalDate localDate;
+
 
 }

@@ -2,6 +2,7 @@ package restful.demo.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import restful.demo.model.BoardDto;
 import restful.demo.model.BookInfoVO;
 import restful.demo.model.Item;
 import restful.demo.mapper.TestRepository;
@@ -43,5 +44,25 @@ public class TestServiceImpl implements TestService {
     @Override
     public void insert(NoticeModel noticeModel) {
          testRepository.insert(noticeModel);
+    }
+
+    @Override
+    public void update(NoticeModel noticeModel,int id) {
+        testRepository.update(noticeModel);
+    }
+
+    @Override
+    public void delete(int id) {
+        testRepository.delete(id);
+    }
+
+    @Override
+    public List<BoardDto> selectBoardList() throws Exception {
+        return testRepository.selectBoardList();
+    }
+
+    @Override
+    public void insertBoard(BoardDto boardDto) throws Exception {
+        testRepository.insertBoard(boardDto);
     }
 }

@@ -1,8 +1,10 @@
 package restful.demo.controller;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+import restful.demo.model.BoardDto;
 import restful.demo.model.BookInfoVO;
 import restful.demo.model.Item;
 import restful.demo.model.NoticeModel;
@@ -45,14 +47,14 @@ public class ApiNoticeController {
                 .id(1)
                 .title("공지사항 입니다")
                 .content("공지사항 내용 입니다")
-                .localDate(LocalDate.of(2023,03,03))
+                //.localDate(LocalDate.of(2023,03,03))
                 .build());
 
         noticeModelList.add(NoticeModel.builder()
                 .id(2)
                 .title("두번째 공지사항 입니다")
                 .content("두번째 공지사항 내용 입니다")
-                .localDate(LocalDate.of(2023,03,03))
+                //.localDate(LocalDate.of(2023,03,03))
                 .build());
 
         return noticeModelList;
@@ -91,7 +93,7 @@ public class ApiNoticeController {
     @PostMapping("/api/notice1")
     public NoticeModel addNotice(@RequestBody NoticeModel noticeModel) {
         noticeModel.setId(3);
-        noticeModel.setLocalDate(LocalDate.now());
+        //noticeModel.setLocalDate(LocalDate.now());
         return noticeModel;
     }
 
@@ -115,24 +117,57 @@ public class ApiNoticeController {
         return testService.getBook();
     }
 
+    @ApiOperation(value = "조회 기능", notes = "조회 기능")
     @GetMapping("/notice")
     public List<NoticeModel> getNotice(NoticeModel noticeModel) {
         log.info("모델 컨트롤러 진입");
         return testService.getNotice();
     }
 
+    @ApiOperation(value = "아이디로 조회 기능", notes = "아이디로 조회 기능")
     @GetMapping("/notice/{id}")
     public NoticeModel selectById(@PathVariable int id) {
         log.info("모델1 컨트롤러 진입");
         return testService.selectById(id);
     }
 
-    // 테스트해봐야함
+    @ApiOperation(value = "추가 기능", notes = "추가 기능")
     @PostMapping("/notice/new1")
     public List<NoticeModel> insert(@RequestBody NoticeModel noticeModel) {
         testService.insert(noticeModel);
+        return testService.getNotice();
+    }
+
+    @ApiOperation(value = "수정 기능", notes = "수정 기능")
+    @PutMapping("/noticeUp/{id}")
+    public List<NoticeModel> update(@PathVariable int id,@RequestBody NoticeModel noticeModel) {
+        testService.update(noticeModel,id);
+        return testService.getNotice();
+    }
+
+    @ApiOperation(value = "삭제 기능", notes = "삭제 기능")
+    @DeleteMapping("/noticeDe/{id}")
+    public List<NoticeModel> delete(@PathVariable int id) {
+        testService.delete(id);
 
         return testService.getNotice();
     }
+
+    @GetMapping("/board/openBoardList.do")
+    public List<BoardDto> openBoardList(BoardDto boardDto) throws Exception{
+
+        return testService.selectBoardList();
+    }
+
+
+    @PostMapping("/board/openBoardWrite.do")
+    @ResponseBody
+    public List<BoardDto> insertBoard(BoardDto boardDto) throws Exception{
+        testService.insertBoard(boardDto);
+
+        return testService.selectBoardList();
+    }
+
+
 
 }
