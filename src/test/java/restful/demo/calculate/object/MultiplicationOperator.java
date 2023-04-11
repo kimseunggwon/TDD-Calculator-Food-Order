@@ -1,4 +1,4 @@
-package restful.demo.calculate;
+package restful.demo.calculate.object;
 
 public class MultiplicationOperator  implements NewArithmeticOperator {
 
@@ -8,7 +8,7 @@ public class MultiplicationOperator  implements NewArithmeticOperator {
     }
 
     @Override
-    public int calculate(int operand1, int operand2) {
-        return operand1 * operand2;
+    public int calculate(PositiveNumber operand1, PositiveNumber operand2) {
+        return operand1.toInt() * operand2.toInt();
     }
 }

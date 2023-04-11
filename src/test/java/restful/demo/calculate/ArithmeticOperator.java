@@ -1,4 +1,4 @@
-package restful.demo;
+package restful.demo.calculate;
 
 import java.util.Arrays;
 
