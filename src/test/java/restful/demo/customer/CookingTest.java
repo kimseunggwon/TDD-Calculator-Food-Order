@@ -18,7 +18,9 @@ public class CookingTest {
 
         Cook cook = cooking.makeCook(menuItem);
 
-        // 객체들끼리 비교할때는 cook 객체에 equals and hashCode
+        /**
+         * 객체들끼리 비교할때는 equals and hashCode
+         */
         assertThat(cook).isEqualTo(new Cook("돈까스",5000));
     }
 }

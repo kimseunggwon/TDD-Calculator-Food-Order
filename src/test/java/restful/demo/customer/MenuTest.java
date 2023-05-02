@@ -22,6 +22,7 @@ public class MenuTest {
         assertThat(menuItem).isEqualTo(new MenuItem("돈까스",5000));
     }
 
+    
     @DisplayName("메뉴판에 없는 메뉴를 선택할시 예외를 반환한다.")
     @Test
     void chooseTest2() {
@@ -31,4 +32,6 @@ public class MenuTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("잘못된 메뉴 이름입니다.");
     }
+
+
 }

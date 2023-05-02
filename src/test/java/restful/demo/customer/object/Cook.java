@@ -18,7 +18,9 @@ public class Cook {
         this.price = menuItem.getPrice();
     }
 
-    // 객체들끼리 비교할때는 equals and hashCode
+    /**
+     * 객체들끼리 비교할때는 equals and hashCode
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
