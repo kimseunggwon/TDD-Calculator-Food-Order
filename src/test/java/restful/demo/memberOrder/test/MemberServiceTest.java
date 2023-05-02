@@ -1,7 +1,9 @@
 package restful.demo.memberOrder.test;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import restful.demo.memberOrder.AppConfig;
 import restful.demo.memberOrder.member.Grade;
 import restful.demo.memberOrder.member.Member;
 import restful.demo.memberOrder.member.MemberService;
@@ -9,7 +11,15 @@ import restful.demo.memberOrder.member.MemberServiceImpl;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    //MemberService memberService = new MemberServiceImpl();
+
+
+    MemberService memberService;
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
