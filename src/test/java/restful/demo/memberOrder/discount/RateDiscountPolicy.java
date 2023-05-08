@@ -1,8 +1,10 @@
 package restful.demo.memberOrder.discount;
 
+import org.springframework.stereotype.Component;
 import restful.demo.memberOrder.member.Grade;
 import restful.demo.memberOrder.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;  // 10% 할인

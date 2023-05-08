@@ -1,5 +1,7 @@
 package restful.demo.memberOrder.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import restful.demo.memberOrder.discount.DiscountPolicy;
 import restful.demo.memberOrder.discount.FixDiscountPolicy;
 import restful.demo.memberOrder.discount.RateDiscountPolicy;
@@ -7,6 +9,7 @@ import restful.demo.memberOrder.member.Member;
 import restful.demo.memberOrder.member.MemberRepository;
 import restful.demo.memberOrder.member.MemoryMemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
     // private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -19,6 +22,7 @@ public class OrderServiceImpl implements OrderService{
      */
     private DiscountPolicy discountPolicy;
     private MemberRepository memberRepository;
+
 
 
     public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {

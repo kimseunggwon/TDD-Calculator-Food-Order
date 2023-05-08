@@ -10,7 +10,6 @@
         WHERE id = #{id}
     </select>
 
-
     <select id="getItem" resultType="Item">
         select * from item
     </select>
@@ -76,7 +75,11 @@
 	</insert>
 
 
-  <!-- useGeneratedKeys="true" keyProperty="id" -->
+  <!--
+  useGeneratedKeys="true"  == 자동 생성된 키 값들을 가져올 것
+
+  keyProperty="id" == 리턴 될 key값 설정.
+  -->
 
 
 

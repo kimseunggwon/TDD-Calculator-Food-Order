@@ -1,5 +1,9 @@
 package restful.demo.memberOrder.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
     // MemberServiceImpl은 MemoryMemberRepository 의존하지 않는다
@@ -13,9 +17,11 @@ public class MemberServiceImpl implements MemberService{
      */
     private final MemberRepository memberRepository;
 
+
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+
     @Override
     public void join(Member member) {
         memberRepository.save(member);

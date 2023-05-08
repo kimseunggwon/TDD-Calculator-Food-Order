@@ -38,6 +38,7 @@ public class ApiNoticeController {
     /**
      * Builder 적용
      * 객체(Class).builder()....build() 형식
+     * 빌더 패턴 장점 : 필요한 데이터만 설정, 유연성, 기독성, 변경 가능성 최소화
      */
     @GetMapping("/api/notice")
     public List<NoticeModel> notice() {

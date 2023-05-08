@@ -13,6 +13,7 @@ import javax.management.MXBean;
 
 
 // @EnableWebSecurity
+// TODO : 연습모드
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig  {
