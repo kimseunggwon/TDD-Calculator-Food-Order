@@ -2,7 +2,8 @@ package study.demo.ex_study;
 
 import java.util.Scanner;
 
-/** 가장 작은 값부터 순서대로 정렬하기
+/** 배열의 이해
+ *  가장 작은 값부터 순서대로 정렬하기
  *  키보드로 10000미만의 10개 숫자를 입력받아, 가장 작은 숫자부터 정렬하여 출력하기
  */
 public class ex3_2 {

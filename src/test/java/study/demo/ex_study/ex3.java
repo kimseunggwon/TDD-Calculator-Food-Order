@@ -3,14 +3,12 @@ package study.demo.ex_study;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- *  배열의 이해와 사용
+/** 배열 / 제어문 이해
+ *  최대값 최소값 구하기  => 배열 사용하고 리펙토링 해보기
  */
 public class ex3 {
     public static void main(String[] args) {
 
-        /** ex2 최대값 최소값 구하기  => 배열 사용하고 리펙토링 해보기
-         */
         final int MAX = 300;
         final int MIN = 0;
         final int ARRAY_MAX = 5;

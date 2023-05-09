@@ -2,7 +2,9 @@ package study.demo.ex_study;
 
 import java.util.Scanner;
 
-/** 입력되는 값의 최근 5개의 평균을 구하기
+/** 배열의 이해
+ *  입력되는 값의 최근 5개의 평균을 구하기
+ *  평균 = 자료 값의 합 % 자료의 수
  */
 public class ex3_1 {
 
@@ -22,11 +24,10 @@ public class ex3_1 {
 
         while (true) {
 
-
             System.out.println("input : ");
             data1 = sc1.nextInt();
 
-            if (data1 != -1) {
+            if (data1 != -1) {        //무한루프 방지
                 sum = 0; // sum 초기화
                 avr = 0;
 

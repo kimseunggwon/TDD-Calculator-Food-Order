@@ -3,7 +3,7 @@ package study.demo.ex_study;
 import java.util.Scanner;
 
 /**
- *  제어문2
+ *  제어문 이해 2
  */
 public class ex2 {
 
@@ -16,7 +16,7 @@ public class ex2 {
 
             if (i > 3) {
                 System.out.println("break!");
-                break; // 반복문 , switch문 내에서 사용
+                break; // 반복문 , switch 내에서 사용
             }
             System.out.println("break after : " + i);
 
@@ -70,6 +70,7 @@ public class ex2 {
             System.out.println((A?"1,":"0,") + (B ? "1 : ":"0 : ")  + orAB);
         }
 
+
         /**  ex3 간단 구구단
          */
         // TODO Auto-generated method stub
@@ -100,7 +101,7 @@ public class ex2 {
 
         while(true) {
             System.out.println("input : ");
-            data = sc.nextInt(); // 입력을 받는다
+            data = sc.nextInt(); // data = Scanner 입력
 
             if(data <= MAX && data >= MIN) {
                 System.out.println("ok : "+data);
@@ -108,7 +109,6 @@ public class ex2 {
                 if(data > max) { // max는 지금 최소값인 0이기 때문에 data에 1만 넣어도 max값이 변한다.
                     max = data; // 최소값이 였던 max가 값을받고 max값으로 교체
                     System.out.println("found new max : " + max);
-
                 }
 
                 if(data < min) { // 지금 min에는 max값이 들어가 있다.
@@ -129,8 +129,6 @@ public class ex2 {
         System.out.println("final min : " + min);
         System.out.println("final max : " + max);
         sc.close();
-
-
 
     }
 }

@@ -1,7 +1,7 @@
 package study.demo.ex_study;
 
 /**
- *  제어문
+ *  제어문 이해 1
  */
 public class ex1 {
 
@@ -16,11 +16,11 @@ public class ex1 {
 
         // if문 자바는 { } 없으면 자동으로 한줄까지 생성해준다. 그럼 무조건 run2가 출력이 된다.
         if (true)
-            System.out.println("run2");
+        System.out.println("run2");
         System.out.println("run2-1");
 
         if (false)
-            System.out.println("run3");
+        System.out.println("run3");
         System.out.println("run3-1");
 
 
@@ -65,12 +65,12 @@ public class ex1 {
             System.out.println("run3");
         }
 
-        // AND = 양쪽 모두 true 이어야 true 결과로 얻는다
+        // && = AND = 양쪽 모두 true 이어야 true 결과로 얻는다
         if (cond1 && cond2) {
             System.out.println("run4");
         }
 
-        // OR = 어느 한 쪽이 true이면 true 결과 얻는다
+        // || = OR = 어느 한 쪽이 true이면 true 결과 얻는다
         if (cond1 || cond2) {
             System.out.println("run5");
         }
@@ -83,7 +83,7 @@ public class ex1 {
          */
         int score = 100;
         switch (score / 10) {
-            // case 10 인경우 실행될게 없기 때문에 case9가 실행되어 A학점이 나온다.
+            // case 10 경우 실행될게 없기 때문에 case9가 실행되어 A 학점이 나온다.
             case 10:
             case 9:
                 System.out.println("A");
