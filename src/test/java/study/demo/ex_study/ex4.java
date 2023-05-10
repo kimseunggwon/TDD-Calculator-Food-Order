@@ -39,6 +39,7 @@ public class ex4 {
         return c;
     }
 
+    // 자료값의 총합 % 자료의 개수
     float avr(int[] arry) {
         int sum = 0;
         float avr = 0.0f;

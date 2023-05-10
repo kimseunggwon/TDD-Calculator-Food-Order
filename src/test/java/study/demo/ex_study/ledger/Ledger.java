@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Ledger {
 
     public Scanner sc;
-    public int id =0;
+    public int id = 0;
     public RawInfo rawInfo;
     public ArrayList<RawInfo> totalInfo; // 제네릭타입 = 일반화
 
@@ -157,7 +157,6 @@ public class Ledger {
 
         LocalDateTime now = LocalDateTime.now();
         String date = now.format(DateTimeFormatter.ofPattern("mm-dd"));
-
 
         System.out.println("*******메뉴******");
         System.out.println("1: 수입 입력");
